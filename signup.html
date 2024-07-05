@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoMart 註冊</title>
+    <!-- Link to CSS -->
+    <!-- <link rel="stylesheet" href="styleforsignup.css"> -->
+    <!-- link to boxicons -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        /* Google fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        *{
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-padding-top: 2rem;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-weight: 700;
+            list-style: none;
+            text-decoration: none;
+        }
+        :root {
+            --mmain-color: rgb(68, 65, 65);
+            --text--color: black;
+            --bg-color: #fff;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(#141e30,#243b55);
+        }
+        .section-title{
+            color: #ca5e10;
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1.35rem;
+        }
+        .login-box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            padding: 60px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+            border-radius: 10px;
+        }
+        .login-box h2{
+            font-size: 1.9rem;
+            font-weight: 500;
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+        .login-box .user-box{
+            color: #fff;
+            position: relative;
+        }
+        .user-box{
+            color: #fff;
+        }
+        .login-box .user-box input{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+        }
+        .login-box .user-box label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding:10px 0;
+            font-size: 18px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s linear;
+        }
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label{
+            top: -20px;
+            left:  0;
+            color: #03e9f4;
+            font-size: 15px;
+        }
+        .login-box form a{
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+        }
+        .login-box a:hover{
+            background-color: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                        0 0 25px #03e9f4,
+                        0 0 50px #03e9f4,
+                        0 0 100px #03e9f4;
+        }
+        .login-box a span{
+            position: absolute;
+            display: block;
+        }
+        .login-box a span:nth-child(1){
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent,  #03e9f4);
+            animation: btn-anim1 1s linear infinite;
+        }
+        @keyframes btn-anim1{
+            0%{
+                left: -100%;
+            }
+            50%, 100%{
+                left: 100%;
+            }
+        }
+        .login-box a span:nth-child(2){
+            top:100%;
+            right:0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent,  #03e9f4);
+            animation-delay: .25s;
+            animation: btn-anim2 1s infinite;    
+        }
+        @keyframes btn-anim2{
+            0%{
+                top: -100%;
+            }
+            50%, 100%{
+                top: 100%;
+            }
+        }
+        .login-box a span:nth-child(3){
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent,  #03e9f4);
+            animation-delay: .5s;
+            animation: btn-anim3 1s infinite;    
+        }
+        @keyframes btn-anim3{
+            0%{
+                right: -100%;
+            }
+            50%, 100%{
+                right: 100%;
+            }
+        }
+        .login-box a span:nth-child(4){
+            bottom: 100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent,  #03e9f4);
+            animation-delay: .75s;
+            animation: btn-anim4 1s infinite;
+        }
+        @keyframes btn-anim4{
+            0%{
+                bottom: -100%;
+            }
+            50%, 100%{
+                bottom: 100%;
+            }
+        }
+        .login-box .Log-in{
+            color: #fff;
+            margin-left: 210px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- tile -->
+    <h2 class="section-title"><a><i class='bx bxs-cart' id="title-icon"></i></a>InnoMart</h2>
+    <!-- log in -->
+        <div class="login-box">
+            <h2> SIGN UP</h2>
+            <form action="">
+                <div class="user-box">
+                    <input type="text" name="" require id="username"> <!-- 添加 id 屬性 -->
+                    <label for="">Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="" required id="password"> <!-- 添加 id 屬性 -->
+                    <label for="">Password</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="" required id="gender"> <!-- 添加 id 屬性 -->
+                    <label for="">Gender</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="" required id="age"> <!-- 添加 id 屬性 -->
+                    <label for="">Age</label>
+                </div>
+            <a href="" id="submit-button"> <!-- 添加 id 屬性 -->
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </a>
+            </form>
+            <a class="Log-in" onclick="openNewPage()"><u> Log In!!</u></a>
+            
+            <script>
+                function openNewPage() {
+                    window.open('login.html', '_blank');
+                }
+            </script>
+        </div>
+    
+    <!-- 將 JavaScript 代碼放在這裡 -->
+    <script>
+        const socket = new WebSocket('ws://100.105.122.95:8000/sign-up'); // 替換成你的後端 WebSocket 連接 URL
+
+        socket.onopen = function(event) {
+          console.log('WebSocket connected');
+        };
+
+        // 在提交表單時發送使用者名稱和密碼到後端
+        document.querySelector('#submit-button').addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          const username = document.querySelector('#username').value;
+          const password = document.querySelector('#password').value;
+          const gender = document.querySelector('#gender').value;
+          const age = document.querySelector('#age').value;
+
+          socket.send(JSON.stringify({ username, password, gender, age }));
+        });
+    </script>
+</body>
+</html>
